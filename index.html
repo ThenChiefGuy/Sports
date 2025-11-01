@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sports Streams</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Sports Streams</h1>
+    <p class="subtitle">Generated from <code>playlist_sports_merged.m3u8</code></p>
+    <div id="controls">
+      <input id="search" type="search" placeholder="Search by title, group..." />
+      <select id="category">
+        <option value="">All groups</option>
+      </select>
+    </div>
+  </header>
+
+  <main id="grid" aria-live="polite"></main>
+
+  <template id="card-tpl">
+    <article class="card">
+      <a class="image-link" target="_blank" rel="noopener">
+        <img alt="" />
+      </a>
+      <div class="card-body">
+        <h2 class="title"></h2>
+        <p class="meta"></p>
+        <div class="actions">
+          <a class="open" target="_blank" rel="noopener">Open stream</a>
+          <button class="copy">Copy link</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <footer>
+    <p>Tip: If a link requires a player, try opening it with VLC or a web video player that supports M3U/M3U8.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
