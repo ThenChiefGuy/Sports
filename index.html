@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sports Stream Catalog</title>
+  <meta name="description" content="A clean, static catalog site that opens playlist links in VLC/IPTV apps.">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">🏟️</div>
+      <div class="titles">
+        <h1>Sports Stream Catalog</h1>
+        <p class="sub">Source: <code>playlist_sports_merged.m3u8</code> • Static site, no in-browser streaming</p>
+      </div>
+    </div>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search channels, groups..." aria-label="Search" />
+      <select id="category" aria-label="Filter by group">
+        <option value="">All groups</option>
+      </select>
+      <select id="sort" aria-label="Sort order">
+        <option value="title">Sort: Title</option>
+        <option value="group">Sort: Group</option>
+      </select>
+    </div>
+  </header>
+
+  <main id="grid" class="grid" aria-live="polite"></main>
+
+  <template id="card-tpl">
+    <article class="card">
+      <div class="thumb-wrap">
+        <img class="thumb" alt="" />
+      </div>
+      <div class="card-body">
+        <h2 class="title"></h2>
+        <p class="meta"></p>
+        <div class="actions">
+          <button class="open-app">Open in App</button>
+          <button class="copy">Copy URL</button>
+          <button class="more">⋯</button>
+        </div>
+        <details class="advanced">
+          <summary>Advanced</summary>
+          <p>This site avoids in-browser streaming to bypass CORS and token issues. Use the button above to download a tiny <code>.m3u</code> file that opens in VLC/IPTV apps.</p>
+          <button class="test">Test in Browser (may fail)</button>
+        </details>
+      </div>
+    </article>
+  </template>
+
+  <footer class="site-footer">
+    <p>Tip: Associate <code>.m3u</code> files with <strong>VLC</strong> (Windows/macOS/Linux) for one-click playback.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

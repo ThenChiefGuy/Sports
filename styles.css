@@ -1,0 +1,34 @@
+
+:root{
+  --bg:#0e1220; --bg2:#121833; --card:#111935; --text:#eaf0ff; --muted:#a2acc8;
+  --border: rgba(255,255,255,.12); --ring: rgba(120, 180, 255, .35);
+  --accent:#5aa8ff; --accent2:#7ce1ff;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f7f9ff; --bg2:#eef3ff; --card:#ffffff; --text:#0b1225; --muted:#526086; --border:#dfe6f8; --ring: rgba(0,106,255,.2); --accent:#006aff; --accent2:#00b7ff; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu}
+.site-header{position:sticky;top:0;z-index:5;backdrop-filter:saturate(1.2) blur(8px);background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));border-bottom:1px solid var(--border);padding:1rem;display:grid;gap:.8rem}
+.brand{display:flex;align-items:center;gap:.8rem}
+.logo{font-size:1.6rem}
+.titles h1{margin:0;font-size:1.35rem}
+.titles .sub{margin:.1rem 0 0;color:var(--muted);font-size:.9rem}
+.controls{display:flex;gap:.6rem;flex-wrap:wrap}
+.controls input,.controls select{flex:1 1 220px;padding:.7rem .9rem;border:1px solid var(--border);border-radius:.75rem;background:rgba(255,255,255,.06);color:var(--text);outline:none}
+.controls input::placeholder{color:var(--muted)}
+.controls input:focus,.controls select:focus{box-shadow:0 0 0 .2rem var(--ring);border-color:transparent}
+.grid{display:grid;gap:1rem;padding:1rem;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));align-content:start}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid var(--border);border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s ease, box-shadow .18s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.thumb-wrap{height:160px;background:radial-gradient(120% 100% at 0% 0%, var(--accent), var(--accent2));display:flex;align-items:center;justify-content:center}
+.thumb{width:100%;height:100%;object-fit:cover;display:block;opacity:.95}
+.card-body{padding:.9rem;display:flex;flex-direction:column;gap:.55rem}
+.title{font-size:1.05rem;margin:0}
+.meta{margin:0;color:var(--muted);font-size:.9rem}
+.actions{display:flex;gap:.5rem;flex-wrap:wrap}
+.actions button{padding:.55rem .75rem;border:1px solid var(--border);border-radius:.6rem;background:rgba(255,255,255,.04);color:var(--text);cursor:pointer}
+.actions button:hover{background:rgba(255,255,255,.1)}
+.advanced{margin-top:.3rem}
+.advanced summary{cursor:pointer;color:var(--muted)}
+.site-footer{padding:1.2rem;text-align:center;color:var(--muted);font-size:.95rem}
